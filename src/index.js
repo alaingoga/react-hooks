@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const Alert = () => <div>Testing and testig and testing</div>;
+import App from './app';
 
 ReactDOM.render(
-    <Alert />,
+    <App />,
     document.getElementById('container')
   );
