@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import searchGithub from './searchGithub';
 
-function GetRepostHook({q}) {
+function useRepoHook({q}) {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -17,4 +17,4 @@ function GetRepostHook({q}) {
     return items;
 }
 
-export default GetRepostHook;
+export default useRepoHook;

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import repoSearchCustomHook from './repoSearchCustomHook';
 
-function GetRepostHook() {
+import React, { useState } from 'react';
+import useRepoSearch from './useRepoSearch';
+
+function RepoSearchWithCustomHook() {
     const [query, setQuery] = useState('');
     let searchInput = React.createRef();
     function  update(e) {
@@ -9,7 +10,7 @@ function GetRepostHook() {
         setQuery(searchInput.current.value);
     }
 
-    const data = repoSearchCustomHook({q: query});
+    const data = useRepoSearch({q: query});
 
     return (
         <form onSubmit={update}>
@@ -32,4 +33,4 @@ function GetRepostHook() {
       );
 }
 
-export default GetRepostHook;
+export default RepoSearchWithCustomHook;
