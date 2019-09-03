@@ -22,7 +22,11 @@ function RepoSearchWithCustomHook() {
           {data.length ?
                 (<ul>
                     {
-                      data.map(item => <li key={item.id}>{item.stargazers_count} <a href={item.url}>{item.name}</a></li>
+                      data.map(item => (
+                          <li key={item.id}>
+                            {item.stargazers_count} <a href={item.html_url} target="_blank">{item.name}</a>
+                          </li>
+                        )
                       )
                     }
                   </ul>)
