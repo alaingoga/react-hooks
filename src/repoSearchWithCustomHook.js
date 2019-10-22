@@ -19,10 +19,14 @@ function RepoSearchWithCustomHook() {
             <input type="text" ref={searchInput} />
           </label>
           <input type="submit" value="Submit" />
-          {data.length ?
+          {data.loading ?
+            'loading' :
+            null
+          }
+          {data.items.length ?
                 (<ul>
                     {
-                      data.map(item => (
+                      data.items.map(item => (
                           <li key={item.id}>
                             {item.stargazers_count} <a href={item.html_url} target="_blank">{item.name}</a>
                           </li>
